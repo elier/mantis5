@@ -13,4 +13,9 @@ Here the big idea. You probably have a MantisBT installed in your organization. 
 
 At that point (D-Day) Mantis5 will be able to evolve and add new features at full speed thanks to all those great Symfony developers out there.
 
+# Bootstrap theme
+I bought the theme for this project and got the authorization of the author to integrate it and share it openly within the source code.
+
+NOBODY IS ALLOWED TO USE THE THEME OUT OF THIS PROJECT EXCEPT YOU BUY IT TO THE OWNER THROUGH THE FOLLOWING LINK:
+https://wrapbootstrap.com/theme/kingadmin-responsive-admin-dashboard-WB09JXK43
 
