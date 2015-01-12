@@ -9,7 +9,7 @@ Do you know what that means? Well, I got one of my favorities Bootstrap theme an
 I see the migration of MantisBT to Symfony a feasible and great opportunity for the project because many more developers will be able to contribute much more in such standard and popular framework that is Symfony.
 
 # D-Day Strategy
-Here the big idea. You probably have a MantisBT installed in your organization. Why not to have a second "view" with a nicer UI, mobile friendly, dashboards, nice graphs like JIRA does, etc? That would be the Mantis5 version. So, you keep both version working in parallel until Mantis5 be able to complete replace your MantisBT instance.
+Here the big idea. You probably have a MantisBT installed in your organization. Why not to have a second interface with a nicer UI, mobile friendly, dashboards, nice graphs like JIRA does, etc? That would be the Mantis5 version. So, you keep both version working in parallel until Mantis5 be able to complete replace your MantisBT instance.
 
 At that point (D-Day) Mantis5 will be able to evolve and add new features at full speed thanks to all those great Symfony developers out there.
 
