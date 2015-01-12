@@ -2,7 +2,7 @@
 Mantis5 is an intent to revamp the popular MantisBT project using Symfony and HTML5.
 
 # History 
-I checked once the current MantisBT code and database just by curisity and I realized that the database might be in a good shape like to do a reverse engineering toward the creation of a domain model. Right away, I installed Symfony and started to play with doctrine to generate the entities. For my surprise, I just needed an insignificant change in the database schema in order to be able to generate all entities.
+I checked once the current MantisBT code and database just by curiosity and I realized that the database might be in a good shape like to do a reverse engineering toward the creation of a domain model. Right away, I installed Symfony and started to play with doctrine to generate the entities. For my surprise, I just needed an insignificant change in the database schema in order to be able to generate all entities.
 
 Do you know what that means? Well, I got one of my favorities Bootstrap theme and start to generate also some CRUDs to see what else I can do. In just a few hours, I was able to manage users, authenticate users, create projects and a couple of simple operations. In other words: "I have the traditional MantisBT working and a brand new version (incompleted) based on Symfony sharing the same database plus a nicer mobile friendly UI".
 
