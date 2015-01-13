@@ -15,6 +15,21 @@ Here the big idea. You probably have a MantisBT installed in your organization. 
 
 At that point (D-Day) Mantis5 will be able to evolve and add new features at full speed thanks to all those great Symfony developers out there.
 
+# Installation
+* Install MantisBT version 1.2.17
+* Clone or download this project
+* Update the project using composer. It's a symfony2 project. Make sure you get all the required vendors libraries
+* Configure the project to point to the same database of MantisBT
+* Update the database schema with the following script:
+```SQL
+ALTER TABLE mantis_project_hierarchy_table ADD COLUMN _id INT NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (_id);
+ALTER TABLE mantis_tag_table DROP PRIMARY KEY;
+ALTER TABLE mantis_tag_table CHANGE id id INT AUTO_INCREMENT NOT NULL, CHANGE user_id user_id INT NOT NULL, CHANGE date_created date_created INT NOT NULL, CHANGE date_updated date_updated INT NOT NULL;
+CREATE UNIQUE INDEX `UNIQUE` ON mantis_tag_table (id, name);
+ALTER TABLE mantis_tag_table ADD PRIMARY KEY (id);
+```
+
+
 # Bootstrap theme
 I bought the theme for this project and got the authorization of the author to integrate it and share it openly within the source code.
 
