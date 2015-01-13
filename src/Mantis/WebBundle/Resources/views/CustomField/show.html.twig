@@ -1,0 +1,92 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ entity.type }}</td>
+            </tr>
+            <tr>
+                <th>Possiblevalues</th>
+                <td>{{ entity.possibleValues }}</td>
+            </tr>
+            <tr>
+                <th>Defaultvalue</th>
+                <td>{{ entity.defaultValue }}</td>
+            </tr>
+            <tr>
+                <th>Validregexp</th>
+                <td>{{ entity.validRegexp }}</td>
+            </tr>
+            <tr>
+                <th>Accesslevelr</th>
+                <td>{{ entity.accessLevelR }}</td>
+            </tr>
+            <tr>
+                <th>Accesslevelrw</th>
+                <td>{{ entity.accessLevelRw }}</td>
+            </tr>
+            <tr>
+                <th>Lengthmin</th>
+                <td>{{ entity.lengthMin }}</td>
+            </tr>
+            <tr>
+                <th>Lengthmax</th>
+                <td>{{ entity.lengthMax }}</td>
+            </tr>
+            <tr>
+                <th>Requirereport</th>
+                <td>{{ entity.requireReport }}</td>
+            </tr>
+            <tr>
+                <th>Requireupdate</th>
+                <td>{{ entity.requireUpdate }}</td>
+            </tr>
+            <tr>
+                <th>Displayreport</th>
+                <td>{{ entity.displayReport }}</td>
+            </tr>
+            <tr>
+                <th>Displayupdate</th>
+                <td>{{ entity.displayUpdate }}</td>
+            </tr>
+            <tr>
+                <th>Requireresolved</th>
+                <td>{{ entity.requireResolved }}</td>
+            </tr>
+            <tr>
+                <th>Displayresolved</th>
+                <td>{{ entity.displayResolved }}</td>
+            </tr>
+            <tr>
+                <th>Displayclosed</th>
+                <td>{{ entity.displayClosed }}</td>
+            </tr>
+            <tr>
+                <th>Requireclosed</th>
+                <td>{{ entity.requireClosed }}</td>
+            </tr>
+            <tr>
+                <th>Filterby</th>
+                <td>{{ entity.filterBy }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            <a href="{{ path('secure_customfield_edit', { 'id': entity.id }) }}">
+        Edit
+    </a>
+{{ form_start(delete_form) }}
+{{ form_widget(delete_form) }}
+{{ form_end(delete_form) }}
+{% endblock %}

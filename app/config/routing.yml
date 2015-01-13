@@ -1,0 +1,18 @@
+homepage:
+    pattern:   /
+    defaults: { _controller: MantisWebBundle:Security:login }
+
+login:
+    path:     /login
+    defaults: { _controller: MantisWebBundle:Security:login }
+
+login_check:
+    path: /login_check
+
+logout:
+    path:   /logout
+    
+mantis_web:
+    resource: "@MantisWebBundle/Controller/"
+    type:     annotation
+    prefix:   /

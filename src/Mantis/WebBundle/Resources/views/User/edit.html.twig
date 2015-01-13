@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block pageHeader %}
+<h2>User edit</h2>
+<em>Page description (optional)</em>
+{% endblock %}
+
+{% block body -%}
+    {{ form(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_start(delete_form) }}
+{{ form_widget(delete_form) }}
+{{ form_end(delete_form) }}
+{% endblock %}

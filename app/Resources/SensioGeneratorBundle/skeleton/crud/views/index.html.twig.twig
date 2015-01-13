@@ -1,0 +1,71 @@
+{% block extends %}
+{{ "{% extends '::base.html.twig' %}" }}
+{% endblock extends %}
+
+{{ "{% block pageHeader %}" }}
+<h2>{{ entity }} list</h2>
+<em>{{ entity }} description</em>
+{{ "{% endblock %}" }}
+
+{% block body %}
+{{ "{% block body -%}" }}
+
+    <div class="widget widget-table">
+    <div class="widget-header"><h3><i class="fa fa-table"></i> {{ entity }} list</h3></div>
+    <div class="widget-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+            {%- for field, metadata in fields %}
+
+                <th>{{ field|capitalize }}</th>
+
+            {%- endfor %}
+
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {{ '{% for entity in entities %}' }}
+            <tr>
+
+        {%- for field, metadata in fields %}
+            {%- if loop.first and ('show' in actions) %}
+
+                <td><a href="{{ "{{ path('" ~ route_name_prefix ~ "_show', { 'id': entity.id }) }}" }}">{{ '{{ entity.' ~ field|replace({'_': ''}) ~ ' }}' }}</a></td>
+
+            {%- elseif metadata.type in ['date', 'datetime'] %}
+
+                <td>{{ '{% if entity.' ~ field|replace({'_': ''}) ~ ' %}{{ entity.' ~ field|replace({'_': ''}) ~ '|date(\'Y-m-d H:i:s\') }}{% endif %}' }}</td>
+
+            {%- else %}
+
+                <td>{{ '{{ entity.' ~ field|replace({'_': ''}) ~ ' }}' }}</td>
+
+            {%- endif %}
+
+            {%- if loop.last %}
+
+                <td>
+                    {% include "crud/views/others/actions.html.twig.twig" %}
+                </td>
+
+            {%- endif %}
+        {%- endfor %}
+
+            </tr>
+        {{ '{% endfor %}' }}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    {% if 'new' in actions %}
+<div>
+        <a href="{{ "{{ path('" ~ route_name_prefix ~ "_new') }}" }}" class="btn btn-primary" role="button">
+            Create a new entry
+        </a>
+    </div>
+    {% endif %}
+{{ "{% endblock %}" }}
+{% endblock body %}

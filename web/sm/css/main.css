@@ -1,0 +1,24 @@
+@import url('3rd-party.css');
+@import url('general.css');
+@import url('top-bar.css');
+@import url('navigation.css');
+@import url('main-content.css');
+@import url('ui-elements.css');
+@import url('chart.css');
+@import url('tables.css');
+@import url('page.css');
+@import url('forms.css');
+@import url('components.css');
+
+/*	
+*	############################################################################
+*	
+*	KINGADMIN Admin Dashboard Style
+*	---------------------------------------------------------------------
+*
+*	Version		1.2
+*	Author		The Develovers
+*	Copyright	Copyright 2014 The Develovers
+*	
+*	############################################################################
+*/

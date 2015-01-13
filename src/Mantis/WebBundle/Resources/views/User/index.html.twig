@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="widget widget-table">
+    <div class="widget-header"><h3><i class="fa fa-table"></i> User list</h3></div>
+    <div class="widget-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Username</th>
+                <th>Realname</th>
+                <th>Email</th>
+                <th>Enabled</th>
+                <th>Access Level</th>
+                <th>Last Visit</th>
+                <th>Date Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.username }}</td>
+                <td>{{ entity.realname }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.enabled ? 'Yes' : 'No' }}</td>
+                <td>{{ entity.accessLevel }}</td>
+                <td>{{ entity.lastVisit }}</td>
+                <td>{{ entity.dateCreated }}</td>
+                <td>
+                    <a href="{{ path('secure_user_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i> edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div>
+        <a href="{{ path('secure_user_new') }}" class="btn btn-primary" role="button">
+            Create a new entry
+        </a>
+    </div>
+    {% endblock %}

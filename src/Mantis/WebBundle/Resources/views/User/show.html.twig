@@ -1,0 +1,77 @@
+{% extends '::base.html.twig' %}
+
+{% block pageHeader %}
+<h2>User</h2>
+<em>User description</em>
+{% endblock %}
+
+{% block body -%}
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ entity.username }}</td>
+            </tr>
+            <tr>
+                <th>Realname</th>
+                <td>{{ entity.realname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ entity.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ entity.password }}</td>
+            </tr>
+            <tr>
+                <th>Enabled</th>
+                <td>{{ entity.enabled }}</td>
+            </tr>
+            <tr>
+                <th>Protected</th>
+                <td>{{ entity.protected }}</td>
+            </tr>
+            <tr>
+                <th>Accesslevel</th>
+                <td>{{ entity.accessLevel }}</td>
+            </tr>
+            <tr>
+                <th>Logincount</th>
+                <td>{{ entity.loginCount }}</td>
+            </tr>
+            <tr>
+                <th>Lostpasswordrequestcount</th>
+                <td>{{ entity.lostPasswordRequestCount }}</td>
+            </tr>
+            <tr>
+                <th>Failedlogincount</th>
+                <td>{{ entity.failedLoginCount }}</td>
+            </tr>
+            <tr>
+                <th>Cookiestring</th>
+                <td>{{ entity.cookieString }}</td>
+            </tr>
+            <tr>
+                <th>Lastvisit</th>
+                <td>{{ entity.lastVisit }}</td>
+            </tr>
+            <tr>
+                <th>Datecreated</th>
+                <td>{{ entity.dateCreated }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+            <a href="{{ path('secure_user_edit', { 'id': entity.id }) }}">
+        Edit
+    </a>
+{{ form_start(delete_form) }}
+{{ form_widget(delete_form) }}
+{{ form_end(delete_form) }}
+{% endblock %}

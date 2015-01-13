@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> <![endif]-->
+<!--[if !(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+	<title>{% block title %}Welcome!{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="KingAdmin - Bootstrap Admin Dashboard Theme">
+	<meta name="author" content="The Develovers">
+
+	<!-- CSS -->
+	<link href="{{ asset('sm/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('sm/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+	<link href="{{ asset('sm/css/main.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('sm/css/skins/slategray.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('sm/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css">
+        
+	<!-- CSS for demo style switcher. you can remove this -->
+	<link href="{{ asset('sm/style-switcher/assets/css/style-switcher.css') }}" rel="stylesheet" type="text/css">
+
+	<!-- Fav and touch icons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('sm/ico/kingadmin-favicon144x144.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('sm/ico/kingadmin-favicon114x114.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('sm/ico/kingadmin-favicon72x72.png') }}">
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('sm/ico/kingadmin-favicon57x57.png') }}">
+        <link rel="shortcut icon" href="{{ asset('sm/ico/favicon.png') }}" />
+
+</head>
+<body class="demo-only-page-blank">
+	<!-- WRAPPER -->
+	<div class="wrapper">
+		
+		<!-- TOP BAR -->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row">
+					<!-- logo -->
+					<div class="col-md-2 logo">
+                                            <a href="index.html"><img src="{{ asset('sm/img/mantis5-logo.png') }}" height="24px" alt="Mantis5 - Bug Tracker" /></a>
+                                            <h1 class="sr-only">Mantis5 - Bug Tracker</h1>
+					</div>
+					<!-- end logo -->
+					<div class="col-md-10">
+						<div class="row">
+							<div class="col-md-3">
+
+							</div>
+							<div class="col-md-9">
+								<div class="top-bar-right">
+									<!-- responsive menu bar icon -->
+									<a href="#" class="hidden-md hidden-lg main-nav-toggle"><i class="fa fa-bars"></i></a>
+									<!-- end responsive menu bar icon -->
+									<div class="notifications">
+									</div>
+
+									<!-- logged user and the menu -->
+									<div class="logged-user">
+										<div class="btn-group">
+											<a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+												<img src="{{ asset('sm/img/user-avatar.jpg') }}" />
+												<span class="name">{{ app.user.realname }}</span> <span class="caret"></span>
+											</a>
+											<ul class="dropdown-menu" role="menu">
+												<li>
+													<a href="#">
+														<i class="fa fa-user"></i>
+														<span class="text">Profile</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<i class="fa fa-cog"></i>
+														<span class="text">Settings</span>
+													</a>
+												</li>
+												<li>
+													<a href="{{ path('logout') }}">
+														<i class="fa fa-power-off"></i>
+														<span class="text">Logout</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- end logged user and the menu -->
+								</div><!-- /top-bar-right -->
+							</div>
+						</div><!-- /row -->
+					</div>
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div><!-- /top -->
+		
+
+		<!-- BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+		<div class="bottom">
+			<div class="container">
+				<div class="row">
+					<!-- left sidebar -->
+					<div class="col-md-1 left-sidebar">
+
+						<!-- main-nav -->
+						<nav class="main-nav">
+							<ul class="main-menu">
+								<li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-gears fw"></i><span class="text">Issues</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu open">
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">My View</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">View Issues</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Roadmap</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Summary</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Change log</span></a></li>
+									</ul>
+								</li>
+								<li><a href="#" class="js-sub-menu-toggle"><i class="fa fa-gears fw"></i><span class="text">Manage</span>
+									<i class="toggle-icon fa fa-angle-left"></i></a>
+									<ul class="sub-menu open">
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Users</span></a></li>
+                                                                            <li><a href="{{ path('secure_project') }}"><span class="text">Projects</span></a></li>
+                                                                            <li><a href="{{ path('secure_tag') }}"><span class="text">Tags</span></a></li>
+                                                                            <li><a href="{{ path('secure_customfield') }}"><span class="text">Custom Fields</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Global Profiles</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Plugins</span></a></li>
+                                                                            <li><a href="{{ path('secure_user') }}"><span class="text">Configuration</span></a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav><!-- /main-nav -->
+
+						<div class="sidebar-minified js-toggle-minified">
+							<i class="fa fa-angle-left"></i>
+						</div>
+
+					</div>
+					<!-- end left sidebar -->
+
+					<!-- content-wrapper -->
+					<div class="col-md-11 content-wrapper">
+                                            
+						<!-- main -->
+						<div class="content">
+							<div class="main-header">
+                                                            {% block pageHeader %}{% endblock %}
+							</div>
+                                                    
+							<div class="main-content">
+                                                            
+                                                            {% block body %}{% endblock %}
+                                                            
+							</div><!-- /main-content -->
+						</div><!-- /main -->
+                                                
+					</div><!-- /content-wrapper -->
+                                        
+				</div><!-- /row -->
+			</div><!-- /container -->
+		</div>
+		<!-- END BOTTOM: LEFT NAV AND RIGHT MAIN CONTENT -->
+		<div class="push-sticky-footer"></div>
+	</div><!-- /wrapper -->
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		Mantis 5 | Contact us
+	</footer>
+	<!-- END FOOTER -->
+        
+	<!-- STYLE SWITCHER -->
+	<div class="del-style-switcher">
+		<div class="del-switcher-toggle toggle-hide"></div>
+		<form>
+			<section class="del-section del-section-skin">
+				<h5 class="del-switcher-header">Choose Skins:</h5>
+
+				<ul>
+					<li><a href="#" title="Slate Gray" class="switch-skin slategray" data-skin="{{ asset('sm/css/skins/slategray.css') }}">Slate Gray</a></li>
+					<li><a href="#" title="Dark Blue" class="switch-skin darkblue" data-skin="{{ asset('sm/css/skins/darkblue.css') }}">Dark Blue</a></li>
+					<li><a href="#" title="Dark Brown" class="switch-skin darkbrown" data-skin="{{ asset('sm/css/skins/darkbrown.css') }}">Dark Brown</a></li>
+					<li><a href="#" title="Light Green" class="switch-skin lightgreen" data-skin="{{ asset('sm/css/skins/lightgreen.css') }}">Light Green</a></li>
+					<li><a href="#" title="Orange" class="switch-skin orange" data-skin="{{ asset('sm/css//skins/orange.css') }}">Orange</a></li>
+					<li><a href="#" title="Red" class="switch-skin red" data-skin="{{ asset('sm/css/skins/red.css') }}">Red</a></li>
+					<li><a href="#" title="Teal" class="switch-skin teal" data-skin="{{ asset('sm/css/skins/teal.css') }}">Teal</a></li>
+					<li><a href="#" title="Yellow" class="switch-skin yellow" data-skin="{{ asset('sm/css/skins/yellow.css') }}">Yellow</a></li>
+				</ul>
+
+				<button type="button" class="switch-skin-full fulldark" data-skin="{{ asset('sm/css/skins/fulldark.css') }}">Full Dark</button>
+				<button type="button" class="switch-skin-full fullbright" data-skin="{{ asset('sm/css/skins/fullbright.css') }}">Full Bright</button>
+			</section>
+			
+			<p><a href="#" title="Reset Style" class="del-reset-style">Reset Style</a></p>
+		</form>
+	</div>
+	<!-- END STYLE SWITCHER -->
+
+    <!-- Javascript -->
+    <script src="{{ asset('sm/js/jquery-2.1.0.min.js') }}"></script>
+    <script src="{{ asset('sm/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('sm/js/modernizr.js') }}"></script>
+    <script src="{{ asset('sm/js/bootstrap-tour.custom.js') }}"></script>
+    <script src="{{ asset('sm/js/king-common.js') }}"></script>
+    <script src="{{ asset('sm/style-switcher/assets/js/deliswitch.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/jquery.easypiechart.min.js') }}"></script>
+    <script src="{{ asset('sm/js/raphael-2.1.0.min.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/flot/jquery.flot.min.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/flot/jquery.flot.resize.min.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/flot/jquery.flot.time.min.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/flot/jquery.flot.pie.min.js') }}"></script>
+    <script src="{{ asset('sm/js/stat/flot/jquery.flot.tooltip.min.js') }}"></script>
+    <script src="{{ asset('sm/js/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ asset('sm/js/datatable/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('sm/js/datatable/jquery.dataTables.bootstrap.js') }}"></script>
+    <script src="{{ asset('sm/js/jquery.mapael.js') }}"></script>
+    <script src="{{ asset('sm/js/maps/usa_states.js') }}"></script>
+    <script src="{{ asset('sm/js/king-chart-stat.js') }}"></script>
+    <script src="{{ asset('sm/js/king-table.js') }}"></script>
+    <script src="{{ asset('sm/js/king-components.js') }}"></script>
+    <script src="{{ asset('sm/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('sm/js/daterangepicker.js') }}"></script>
+    <script src="{{ asset('sm/js/bootstrap-datetimepicker.min.js') }}"></script>
+
+</body>
+</html>

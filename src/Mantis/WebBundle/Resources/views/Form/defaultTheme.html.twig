@@ -1,0 +1,55 @@
+{% block form %}
+{% spaceless %}
+<div class="row">
+<div class="col-md-10">
+<div class="widget">
+    <div class="widget-header"><h3><i class="fa fa-edit"></i>Form</h3></div>
+    <div class="widget-content">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+    </div>
+</div>
+</div>
+</div>
+{% endspaceless %}
+{% endblock form %}
+
+{% block form_row %}
+{% spaceless %}
+    <div class="form-group">
+        {{ form_label(form, label|default(null), {label_attr: {'class': 'col-sm-3 control-label'}}) }}
+        {{ form_errors(form) }}
+        <div class="col-sm-9">
+          {{ form_widget(form, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+{% endspaceless %}
+{% endblock form_row %}
+
+{% block datetime_widget -%}
+    {% if widget == 'single_text' %}
+        {{- block('form_widget_simple') -}}
+    {% else %}
+
+    {#
+    <div class="input-group">
+        <div id="datetimepicker1" class="input-append date">
+            <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+            <span class="add-on">
+              <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+            </span>
+        </div>
+    </div>
+    #}
+
+        <div {{ block('widget_container_attributes') }}>
+            {{- form_errors(form.date) -}}
+            {{- form_errors(form.time) -}}
+            {{- form_widget(form.date) -}}
+            {{- form_widget(form.time) -}}
+        </div>
+
+    {% endif %}
+{%- endblock datetime_widget %}
+

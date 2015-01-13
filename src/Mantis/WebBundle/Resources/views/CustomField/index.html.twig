@@ -1,0 +1,70 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="widget widget-table">
+    <div class="widget-header"><h3><i class="fa fa-table"></i> CustomField list</h3></div>
+    <div class="widget-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Possiblevalues</th>
+                <th>Defaultvalue</th>
+                <th>Validregexp</th>
+                <th>Accesslevelr</th>
+                <th>Accesslevelrw</th>
+                <th>Lengthmin</th>
+                <th>Lengthmax</th>
+                <th>Requirereport</th>
+                <th>Requireupdate</th>
+                <th>Displayreport</th>
+                <th>Displayupdate</th>
+                <th>Requireresolved</th>
+                <th>Displayresolved</th>
+                <th>Displayclosed</th>
+                <th>Requireclosed</th>
+                <th>Filterby</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('secure_customfield_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.type }}</td>
+                <td>{{ entity.possibleValues }}</td>
+                <td>{{ entity.defaultValue }}</td>
+                <td>{{ entity.validRegexp }}</td>
+                <td>{{ entity.accessLevelR }}</td>
+                <td>{{ entity.accessLevelRw }}</td>
+                <td>{{ entity.lengthMin }}</td>
+                <td>{{ entity.lengthMax }}</td>
+                <td>{{ entity.requireReport }}</td>
+                <td>{{ entity.requireUpdate }}</td>
+                <td>{{ entity.displayReport }}</td>
+                <td>{{ entity.displayUpdate }}</td>
+                <td>{{ entity.requireResolved }}</td>
+                <td>{{ entity.displayResolved }}</td>
+                <td>{{ entity.displayClosed }}</td>
+                <td>{{ entity.requireClosed }}</td>
+                <td>{{ entity.filterBy }}</td>
+                <td>
+                                            <a href="{{ path('secure_customfield_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i> edit</a>
+                                        </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div>
+        <a href="{{ path('secure_customfield_new') }}" class="btn btn-primary" role="button">
+            Create a new entry
+        </a>
+    </div>
+    {% endblock %}

@@ -1,0 +1,37 @@
+security:
+    
+    encoders:
+        Mantis\CoreBundle\Entity\User:
+            algorithm: md5
+            encode_as_base64: false
+            iterations: 0
+
+    providers:
+        administrators:
+            entity: { class: MantisCoreBundle:User, property: username }
+    
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: [ ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH ]
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        secured_area:
+            pattern:   ^/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+                default_target_path: secure_user
+            logout:
+                path:   /logout
+                target: /
+
+    access_control:
+        - { path: ^/secure/, roles: ROLE_USER }
+
+    acl:
+        connection: default

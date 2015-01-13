@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie ie9" lang="en" class="no-js"> <![endif]-->
+<!--[if !(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="KingAdmin Dashboard">
+    <meta name="author" content="The Develovers">
+
+    <!-- CSS -->
+    <link href="{{ asset('sm/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('sm/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('sm/css/main.css') }}" rel="stylesheet" type="text/css">
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ asset('sm/ico/kingadmin-favicon144x144.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ asset('sm/ico/kingadmin-favicon114x114.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ asset('sm/ico/kingadmin-favicon72x72.png') }}">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{ asset('sm/ico/kingadmin-favicon57x57.png') }}">
+    <link rel="shortcut icon" href="{{ asset('sm/ico/favicon.png') }}" />
+</head>
+<body>
+    <div class="wrapper full-page-wrapper {{ page_class }} text-center">
+        <div class="inner-page">
+            <div class="logo"><a href="index.html"><img src="{{ asset('sm/img/mantis5-logo.png') }}" alt="SigmaCentral Logo" title="SigmaCentral - Lean Six Sigma essential Toolbox" /></a></div>
+            {% block body %}{% endblock %}
+        </div>
+        <div class="push-sticky-footer"></div>
+    </div>
+
+    	<footer class="footer">
+		Mantis 5 | Contact us
+	</footer>
+
+    <!-- Javascript -->
+    <script src="{{ asset('sm/js/jquery-2.1.0.min.js') }}"></script>
+    <script src="{{ asset('sm/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('sm/js/modernizr.js') }}"></script>
+</body>
+</html>

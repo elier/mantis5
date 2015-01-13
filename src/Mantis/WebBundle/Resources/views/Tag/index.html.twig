@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="widget widget-table">
+    <div class="widget-header"><h3><i class="fa fa-table"></i> Tag list</h3></div>
+    <div class="widget-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Created On</th>
+                <th>Updated On</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.user.username }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.dateCreated }}</td>
+                <td>{{ entity.dateUpdated }}</td>
+                <td>
+                    <a href="{{ path('secure_tag_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i> edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div>
+        <a href="{{ path('secure_tag_new') }}" class="btn btn-primary" role="button">
+            Create a new entry
+        </a>
+    </div>
+    {% endblock %}

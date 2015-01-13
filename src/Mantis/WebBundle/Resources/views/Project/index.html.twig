@@ -1,0 +1,52 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+
+    <div class="widget widget-table">
+    <div class="widget-header"><h3><i class="fa fa-table"></i> Project list</h3></div>
+    <div class="widget-content">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Enabled</th>
+                <th>Viewstate</th>
+                <th>Accessmin</th>
+                <th>Filepath</th>
+                <th>Description</th>
+                <th>Categoryid</th>
+                <th>Inheritglobal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('secure_project_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.status }}</td>
+                <td>{{ entity.enabled ? 'Yes' : 'No' }}</td>
+                <td>{{ entity.viewState }}</td>
+                <td>{{ entity.accessMin }}</td>
+                <td>{{ entity.filePath }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.categoryId }}</td>
+                <td>{{ entity.inheritGlobal }}</td>
+                <td>
+                    <a href="{{ path('secure_project_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i> edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    </div>
+
+    <div>
+        <a href="{{ path('secure_project_new') }}" class="btn btn-primary" role="button">
+            Create a new entry
+        </a>
+    </div>
+    {% endblock %}

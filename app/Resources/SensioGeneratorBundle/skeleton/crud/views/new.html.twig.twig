@@ -1,0 +1,16 @@
+{% block extends %}
+{{ "{% extends '::base.html.twig' %}" }}
+{% endblock extends %}
+
+{{ "{% block pageHeader %}" }}
+<h2>{{ entity }} creation</h2>
+<em>Page description (optional)</em>
+{{ "{% endblock %}" }}
+
+{% block body %}
+{{ "{% block body -%}" }}
+    {{ "{{ form(form, {'attr': {'class': 'form-horizontal'}}) }}" }}
+    {% set hide_edit, hide_delete = true, true %}
+    {% include 'crud/views/others/record_actions.html.twig.twig' %}
+{{ "{% endblock %}" }}
+{% endblock body %}

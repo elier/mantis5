@@ -1,0 +1,43 @@
+{% extends "::base.onecolum.html.twig" %}
+{% set page_class = 'page-login' %}
+{% block body -%}
+
+{% if error %}
+    <div>{{ error.message }}</div>
+{% endif %}
+
+<div class="login-box center-block">
+    <form action="{{ path('login_check') }}" method="post" class="form-horizontal" role="form">
+        <p class="title">Use your username</p>
+        <div class="form-group">
+            <label for="username" class="control-label sr-only">Username</label>
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="username" class="form-control" />
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                </div>
+            </div>
+        </div>
+        <label for="password" class="control-label sr-only">Password</label>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <div class="input-group">
+                    <input type="password" id="password" name="_password" placeholder="password" class="form-control" />
+                    <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="simple-checkbox">
+            <input type="checkbox" id="checkbox1">
+            <label for="checkbox1">Remember me next time</label>
+        </div>
+        <button type="submit" class="btn btn-custom-primary btn-lg btn-block btn-login"><i class="fa fa-arrow-circle-o-right"></i> Login</button>
+    </form>
+
+    <div class="links">
+        <p><a href="#">Forgot Username or Password?</a></p>
+    </div>
+</div>
+
+
+{% endblock %}

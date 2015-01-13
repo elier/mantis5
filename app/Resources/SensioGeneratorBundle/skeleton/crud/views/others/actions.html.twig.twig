@@ -1,0 +1,6 @@
+    {% for action in record_actions %}
+    {% if action != 'show' %}
+        <a href="{{ "{{ path('" ~ route_name_prefix ~ "_" ~ action ~ "', { 'id': entity.id }) }}" }}"><i class="fa {{action == 'edit' ? 'fa-edit' : 'fa-arrow-circle-o-right'}}"></i> {{ action }}</a>
+    {% endif %}
+    {% endfor %}
+                
