@@ -28,7 +28,8 @@ ALTER TABLE mantis_tag_table CHANGE id id INT AUTO_INCREMENT NOT NULL, CHANGE us
 CREATE UNIQUE INDEX `UNIQUE` ON mantis_tag_table (id, name);
 ALTER TABLE mantis_tag_table ADD PRIMARY KEY (id);
 ```
-
+# What next?
+I am inviting all Symfony developers around to contribute.
 
 # Bootstrap theme
 I bought the theme for this project and got the authorization of the author to integrate it and share it openly within the source code.
