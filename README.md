@@ -1,3 +1,5 @@
+![Mantis5 preview](http://elierdelgado.com/wp-content/uploads/2015/01/Mantis5.png)
+
 # Intro
 Mantis5 is an intent to revamp the popular MantisBT project using Symfony and HTML5.
 
