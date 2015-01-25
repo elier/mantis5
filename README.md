@@ -28,7 +28,7 @@ ALTER TABLE mantis_tag_table CHANGE id id INT AUTO_INCREMENT NOT NULL, CHANGE us
 CREATE UNIQUE INDEX `UNIQUE` ON mantis_tag_table (id, name);
 ALTER TABLE mantis_tag_table ADD PRIMARY KEY (id);
 ```
-* You should be able to login with the same credentials of your Mantis instance
+* You should be able to login with the same credentials of your Mantis instance, create users, projects.
 
 # What next?
 I am inviting all Symfony developers around to contribute.
